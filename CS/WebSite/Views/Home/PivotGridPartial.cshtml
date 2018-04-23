@@ -1,0 +1,35 @@
+@Html.DevExpress().PivotGrid(
+settings => {
+    settings.Name = "PivotGrid";
+    settings.CallbackRouteValues = new { Controller = "Home", Action = "PivotGridPartial" };
+    settings.OptionsView.ShowHorizontalScrollBar = true;
+    settings.Width = new System.Web.UI.WebControls.Unit(90, System.Web.UI.WebControls.UnitType.Percentage);
+    settings.Fields.Add("[Measures].[Sales Amount]", PivotArea.DataArea);
+    settings.Fields.Add("[Product].[Product Categories].[Category]", PivotArea.RowArea);
+    settings.Fields.Add("[Date].[Calendar Year].[Calendar Year]", PivotArea.ColumnArea);
+
+    settings.PreRender = (sender, e) => {
+        ASPxPivotGrid PivotGrid = sender as ASPxPivotGrid;
+        MemoryStream collapseStateStream = (MemoryStream)(Session["CollapseStateStream"]);
+        string layout = (string)(Session["Layout"]);
+        if (layout == null ||
+            collapseStateStream == null) {
+            return;
+        }
+        PivotGrid.LoadLayoutFromString(layout, PivotGridWebOptionsLayout.DefaultLayout);
+        collapseStateStream.Seek(0, SeekOrigin.Begin);
+        PivotGrid.LoadCollapsedStateFromStream(collapseStateStream);
+    };
+    settings.AfterPerformCallback = (sender, e) => {
+        ASPxPivotGrid PivotGrid = sender as ASPxPivotGrid;
+        Session["Layout"] = PivotGrid.SaveLayoutToString(PivotGridWebOptionsLayout.DefaultLayout);
+            MemoryStream collapseStateStream = (MemoryStream)(Session["CollapseStateStream"]);
+            if (collapseStateStream != null) {
+                collapseStateStream.Dispose();
+            }
+            collapseStateStream = new MemoryStream();
+            PivotGrid.SaveCollapsedStateToStream(collapseStateStream);
+            Session["CollapseStateStream"] = collapseStateStream;
+     };
+
+    }).BindToOLAP(PivotGridHelper.OlapConnectionString).GetHtml()

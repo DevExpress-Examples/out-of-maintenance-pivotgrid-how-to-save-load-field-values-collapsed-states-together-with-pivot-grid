@@ -1,0 +1,14 @@
+@{
+    ViewBag.Title = "Home Page";
+}
+@using (Html.BeginForm("PostPivotGridState", "Home", FormMethod.Post, new { style = "background-color: #EEE; border: 1px solid black; padding: 4px;" })) {
+    <strong style="color: Blue">@ViewBag.Message</strong><br />   
+    <br /> 
+    <div class="vertComponentContainer">
+        @Html.Partial("PivotGridPartial")
+    </div>
+    <br />
+    <div>
+        <input type="submit" title="Click Me" />
+    </div>
+}
