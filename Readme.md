@@ -1,3 +1,11 @@
+<!-- default file list -->
+*Files to look at*:
+
+* [HomeController.cs](./CS/WebSite/Controllers/HomeController.cs) (VB: [HomeController.vb](./VB/WebSite/Controllers/HomeController.vb))
+* [PivotGridHelper.cs](./CS/WebSite/Controllers/PivotGridHelper.cs) (VB: [PivotGridHelper.vb](./VB/WebSite/Controllers/PivotGridHelper.vb))
+* [Index.cshtml](./CS/WebSite/Views/Home/Index.cshtml)
+* [PivotGridPartial.cshtml](./CS/WebSite/Views/Home/PivotGridPartial.cshtml)
+<!-- default file list end -->
 # PivotGrid - How to save/load field values' collapsed states together with pivot grid's layout
 
 
