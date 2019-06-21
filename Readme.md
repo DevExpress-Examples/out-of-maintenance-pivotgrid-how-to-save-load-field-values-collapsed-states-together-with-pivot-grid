@@ -7,6 +7,9 @@
 * [PivotGridPartial.cshtml](./CS/WebSite/Views/Home/PivotGridPartial.cshtml)
 <!-- default file list end -->
 # PivotGrid - How to save/load field values' collapsed states together with pivot grid's layout
+<!-- run online -->
+**[[Run Online]](https://codecentral.devexpress.com/e4219)**
+<!-- run online end -->
 
 
 <p>Field values' collapsed states can only be restored in the same layout they were saved in. This example shows how to save and load a extension's layout together with collapsed states to ensure that the states are loaded in the appropriate layout.</p><p><strong>See also:</strong><br />
