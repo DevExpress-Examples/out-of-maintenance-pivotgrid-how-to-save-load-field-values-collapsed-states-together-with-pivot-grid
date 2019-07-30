@@ -8,7 +8,7 @@
 <!-- default file list end -->
 # PivotGrid - How to save/load field values' collapsed states together with pivot grid's layout
 <!-- run online -->
-**[[Run Online]](https://codecentral.devexpress.com/e4219)**
+**[[Run Online]](https://codecentral.devexpress.com/e4219/)**
 <!-- run online end -->
 
 
