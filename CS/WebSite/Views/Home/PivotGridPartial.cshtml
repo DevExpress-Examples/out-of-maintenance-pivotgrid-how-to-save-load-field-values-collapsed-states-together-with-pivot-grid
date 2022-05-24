@@ -4,9 +4,9 @@ settings => {
     settings.CallbackRouteValues = new { Controller = "Home", Action = "PivotGridPartial" };
     settings.OptionsView.ShowHorizontalScrollBar = true;
     settings.Width = new System.Web.UI.WebControls.Unit(90, System.Web.UI.WebControls.UnitType.Percentage);
-    settings.Fields.Add("[Measures].[Sales Amount]", PivotArea.DataArea);
-    settings.Fields.Add("[Product].[Product Categories].[Category]", PivotArea.RowArea);
-    settings.Fields.Add("[Date].[Calendar Year].[Calendar Year]", PivotArea.ColumnArea);
+    settings.Fields.AddDataSourceColumn("[Measures].[Sales Amount]", PivotArea.DataArea);
+    settings.Fields.AddDataSourceColumn("[Product].[Product Categories].[Category]", PivotArea.RowArea);
+    settings.Fields.AddDataSourceColumn("[Date].[Calendar Year].[Calendar Year]", PivotArea.ColumnArea);
 
     settings.PreRender = (sender, e) => {
         ASPxPivotGrid PivotGrid = sender as ASPxPivotGrid;

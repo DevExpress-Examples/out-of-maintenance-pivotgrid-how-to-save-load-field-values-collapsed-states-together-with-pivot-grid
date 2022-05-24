@@ -22,7 +22,7 @@ public static class PivotGridHelper {
         }
     }
 
-    static string olapCS = "provider=MSOLAP;data source=\"http://demos.devexpress.com/Services/OLAP/msmdpump.d" +
+    static string olapCS = "provider=MSOLAP;data source=\"https://demos.devexpress.com/Services/OLAP/msmdpump.d" +
                     "ll\";initial catalog=\"Adventure Works DW Standard Edition\";cube name=\"Adventure W" +
                     "orks\"";
     public static string OlapConnectionString { get { return olapCS; } }

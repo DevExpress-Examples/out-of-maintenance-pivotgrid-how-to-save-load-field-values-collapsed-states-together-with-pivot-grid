@@ -26,7 +26,7 @@ Public NotInheritable Class PivotGridHelper
 		End Get
 	End Property
 
-	Private Shared olapCS As String = "provider=MSOLAP;data source=""http://demos.devexpress.com/Services/OLAP/msmdpump.d" & "ll"";initial catalog=""Adventure Works DW Standard Edition"";cube name=""Adventure W" & "orks"""
+	Private Shared olapCS As String = "provider=MSOLAP;data source=""https://demos.devexpress.com/Services/OLAP/msmdpump.d" & "ll"";initial catalog=""Adventure Works DW Standard Edition"";cube name=""Adventure W" & "orks"""
 	Public Shared ReadOnly Property OlapConnectionString() As String
 		Get
 			Return olapCS
